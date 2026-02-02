@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SE Support Guide - Split Sections</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Inter, sans-serif;
+      min-height: 1500px; /* povećaj po potrebi (1500, 2000...) */
+      display: flex;
+      align-items: stretch;
+    }
+
+    nav {
+      width: 220px;
+      background: #f3f4f6;
+      border-right: 1px solid #ddd;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav button {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 12px;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      border-radius: 4px;
+      font-size: 18px;
+    }
+
+    nav button:hover {
+      background: #e5e7eb;
+    }
+
+    nav button.active {
+      background: #ddd6fe;
+      color: #4c1d95;
+      font-weight: bold;
+    }
+
+    nav button::before {
+      content: "• ";
+      color: black;
+      font-weight: bold;
+    }
+
+    iframe {
+      flex: 1;
+      border: none;
+      min-height: 1500px; /* povećaj prozor u kome se prikazuje sadržaj */
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <button class="active" onclick="loadPage('overview.html', this)">Overview</button>
+    <button onclick="loadPage('services.html', this)">Services</button>
+    <button onclick="loadPage('ticketing.html', this)">How to Create a Case</button>
+  </nav>
+  <iframe id="content" src="overview.html"></iframe>
+
+  <script>
+    function loadPage(page, btn) {
+      document.getElementById('content').src = page;
+      document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+  </script>
+</body>
+</html>

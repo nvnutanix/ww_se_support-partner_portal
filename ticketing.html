@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Worldwide SE Support Services Guide</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+        /* Custom Styles for a more polished look */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .tab-button.active {
+            border-color: #5f259f;
+            color: #5f259f;
+            background-color: #f3e8ff;
+        }
+        .sub-tab-button.active-sub {
+            background-color: #5f259f;
+            color: white;
+        }
+        .accordion-button.active-acc {
+            background-color: #f3e8ff;
+            color: #5f259f;
+        }
+        .accordion-button:hover .accordion-icon {
+            color: #5f259f;
+        }
+        .accordion-button.active-acc .accordion-icon {
+            transform: rotate(180deg);
+        }
+        .panel {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 15px;
+            padding: 10px; /* Optional padding around the image */
+            background-color: #f7f7f7; /* Light background for visibility */
+            border-radius: 8px;
+            overflow: hidden; /* Ensure image doesn't overflow container */
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px; /* Slightly rounded corners for images */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+        }
+    
+.image-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  cursor: grab;
+}
+
+.image-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  transition: transform 0.2s ease;
+  cursor: grab;
+}
+</style>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+</head>
+<body class="bg-gray-50 text-gray-800">
+<div class="container mx-auto pt-0 px-4 sm:px-6 lg:px-8">
+<div class="content mt-5" id="ticketing">
+<div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+<h2 class="text-2xl font-bold text-purple-700 mb-4">How to Create a Case for SE Support</h2>
+<p class="mb-6">Currently, Worldwide System Engineers have 3 active options to raise a "SE Support" tickets.</p>
+<div class="sub-nav mb-6 bg-purple-100 rounded-lg p-1 flex space-x-1">
+<button class="sub-tab-button flex-1 py-2 px-4 text-center font-semibold rounded-md transition-colors duration-300 active-sub" onclick="openSubTab(event, 'sfdc', 'ticketing-group')">A) SFDC Case Object</button>
+</div>
+<div class="sub-content active-sub ticketing-group" id="sfdc">
+<h3 class="font-semibold text-lg text-gray-800 mb-3">Option 1: Using the SFDC Case Object</h3>
+<p class="mb-3">Introducing the new SE Support Ticketing system available under the customer/prospect Account object in SFDC. SFDC case creation allows SE to add all the relevant information into the ticket before submitting it to ensure quick turnaround.</p>
+<p>Use the following steps to successfully submit a "SE Support" Ticket in SFDC:</p>
+<div class="space-y-4 mt-4">
+<div>
+<p><strong>1. In Salesforce, navigate to a Customer/Prospect/Channel Account.</strong></p>
+</div>
+<div>
+<p><strong>2. Click on 'Cases'.</strong></p>
+<div class="image-container">
+<img alt="Case 'Type' drop-down menu" src="./images/page2_img3.png"/>
+</div>
+</div>
+<div>
+<p><strong>3. Click on 'New Case' to open the form, and select 'SE Support' as the record type. Click Next to proceed.</strong></p>
+<div class="image-container">
+<img alt="'New Case' record type selection" src="./images/page2_img2.png"/>
+</div>
+</div>
+<div>
+<p><strong>4. Using the Type drop-down, select the service from the drop-down list.</strong></p>
+<div class="image-container">
+<img alt="SFDC Account 'Cases' list" src="./images/page2_img1.png"/>
+</div>
+</div>
+<div>
+<p><strong>5. Fill in all the mandatory information with the red asterisks and click Save.</strong></p>
+</div>
+<div>
+<p><strong>6. Attachment: Attach all the relevant documents under "Related" tab once you save the ticket, this will avoid delays in the resolution.</strong></p>
+</div>
+</div>
+</div>
+<script>
+function openSubTab(evt, tabName, groupClass) {
+    let i, subContent, subTabButtons;
+    subContent = document.getElementsByClassName(groupClass);
+    for (i = 0; i < subContent.length; i++) {
+        subContent[i].style.display = "none";
+    }
+    subTabButtons = evt.currentTarget.parentElement.getElementsByClassName("sub-tab-button");
+    for (i = 0; i < subTabButtons.length; i++) {
+        subTabButtons[i].classList.remove("active-sub");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.classList.add("active-sub");
+}
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".image-container img").forEach(img => {
+    img.style.cursor = "zoom-in";
+    img.addEventListener("click", function() {
+      const overlay = document.createElement("div");
+      overlay.classList.add("image-overlay");
+
+      const zoomImg = document.createElement("img");
+      zoomImg.src = this.src;
+
+      overlay.appendChild(zoomImg);
+      document.body.appendChild(overlay);
+
+      let scale = 1;
+      let isDragging = false;
+      let startX, startY, translateX = 0, translateY = 0;
+
+      overlay.addEventListener("wheel", function(e) {
+        e.preventDefault();
+        const rect = zoomImg.getBoundingClientRect();
+        const offsetX = e.clientX - rect.left;
+        const offsetY = e.clientY - rect.top;
+
+        const prevScale = scale;
+        if (e.deltaY < 0) {
+          scale *= 1.1;
+        } else {
+          scale /= 1.1;
+        }
+        const scaleFactor = scale / prevScale;
+
+        translateX -= (offsetX - translateX) * (scaleFactor - 1);
+        translateY -= (offsetY - translateY) * (scaleFactor - 1);
+
+        zoomImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+      });
+
+      zoomImg.addEventListener("mousedown", function(e) {
+        isDragging = true;
+        startX = e.clientX - translateX;
+        startY = e.clientY - translateY;
+        zoomImg.style.cursor = "grabbing";
+      });
+
+      document.addEventListener("mousemove", function(e) {
+        if (!isDragging) return;
+        translateX = e.clientX - startX;
+        translateY = e.clientY - startY;
+        zoomImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+      });
+
+      document.addEventListener("mouseup", function() {
+        if (isDragging) {
+          isDragging = false;
+          zoomImg.style.cursor = "grab";
+        }
+      });
+
+      overlay.addEventListener("click", function(e) {
+        if (e.target === overlay) {
+          overlay.remove();
+        }
+      });
+
+      document.addEventListener("keydown", function escHandler(e) {
+        if (e.key === "Escape") {
+          overlay.remove();
+          document.removeEventListener("keydown", escHandler);
+        }
+      });
+    });
+  });
+});
+</script></body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Worldwide SE Support Services Guide</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+        /* Custom Styles for a more polished look */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .tab-button.active {
+            border-color: #5f259f;
+            color: #5f259f;
+            background-color: #f3e8ff;
+        }
+        .sub-tab-button.active-sub {
+            background-color: #5f259f;
+            color: white;
+        }
+        .accordion-button.active-acc {
+            background-color: #f3e8ff;
+            color: #5f259f;
+        }
+        .accordion-button:hover .accordion-icon {
+            color: #5f259f;
+        }
+        .accordion-button.active-acc .accordion-icon {
+            transform: rotate(180deg);
+        }
+        .panel {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 15px;
+            padding: 10px; /* Optional padding around the image */
+            background-color: #f7f7f7; /* Light background for visibility */
+            border-radius: 8px;
+            overflow: hidden; /* Ensure image doesn't overflow container */
+	    width: 100%;
+	    max-width: 1200px;
+	    margin-left: auto;
+	    margin-right: auto;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px; /* Slightly rounded corners for images */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+        }
+    
+.image-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  cursor: grab;
+}
+
+.image-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  transition: transform 0.2s ease;
+  cursor: grab;
+}
+</style>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+</head>
+<body class="bg-gray-50 text-gray-800">
+<div class="container mx-auto pt-0 px-4 sm:px-6 lg:px-8">
+<div class="content mt-5 space-y-2" id="services">
+<div class="bg-white rounded-lg shadow-sm border border-gray-200">
+<button class="accordion-button w-full text-left p-5 font-semibold text-lg flex justify-between items-center hover:bg-purple-50 transition-colors duration-200">
+                    1) HW BOM Validation
+                    <svg class="accordion-icon w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+<div class="panel">
+<div class="p-5 border-t border-gray-200">
+<p class="mb-4">Perform customer/prospects existing hardware compatibility check on AHV. We also recommend component replacement of the existing HW to meet the AHV compatibility.</p>
+<h3 class="font-semibold text-md text-gray-800 mb-2">Supported Manufacturers:</h3>
+<ul class="list-disc list-inside mb-4 pl-4">
+<li>HPE, Lenovo, Cisco, Dell, Hitachi</li>
+</ul>
+<div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg">
+<p class="font-bold text-yellow-800">Mandatory Information Required:</p>
+<p class="text-sm mt-2">Note: Mandatory Information required while submitting a ticket for HW BOM validation, without these the validation will not be valid.</p>
+<ul class="list-disc list-inside mt-2 text-yellow-700">
+<li>Chassis, CPU, Memory, Storage controller, Storage (HDD, SSD, or a combination of both), Boot drive, Network</li>
+</ul>
+<p class="mt-3">SEs are requested to submit a BOM (Bill of Materials)/Hardware details (full hardware configurations) for complete hardware validation in the below format. It is recommended to include the following details: Part number/SKU, Description, Quantity.</p>
+<p class="mt-3 text-sm">If there is a need to open a SWOQUAL project (software qualification) in Jira, then the SE Support team will create the ticket and involve the PM, also will keep the system engineer updated.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-sm border border-gray-200">
+<button class="accordion-button w-full text-left p-5 font-semibold text-lg flex justify-between items-center hover:bg-purple-50 transition-colors duration-200">
+                    2) Architectural Diagram Creation
+                    <svg class="accordion-icon w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+<div class="panel">
+<div class="p-5 border-t border-gray-200 space-y-6">
+<p>
+  Creation of Technical Architectural (Lucid Chart) Diagrams of multiple use cases, SE Support team follow the 
+  <a href="https://example.com/nutanix-guidelines" target="_blank" class="text-indigo-600 hover:underline">
+    Nutanix Architecture Diagram Guidelines
+  </a>
+  defined by the Technical Marketing Engineering team. SEs can now reach out to SE Support Team for help with any of the below use case scenarios by submitting a SE Support Ticket.
+</p>
+<div class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg text-sm">
+                            Whiteboard diagrams can be classified into High-Level (brief info) and Detailed (complete info). When submitting a SE Support Ticket, be sure to tell us you wish to classify your whiteboard drawing as High-Level (brief info) or Detailed(complete info).
+                        </div>
+<div>
+<h4 class="font-semibold text-md text-gray-800 mb-2">Use Case Example 1: Current vs Future State</h4>
+<p>Want to show what a customer/prospect setup looks like now and what it could look like with Nutanix? The SE Support Team can help merge two diagrams into one. For example, it will showcase the customer/prospect's existing infrastructure vs. Nutanix Solutions' offering. The diagram below represents the current state, based on the Nutanix Collector output shared by the SE, and the future state for Phase 1 and Phase 2, derived from the solution summary provided by the SE. The SE Support Team has consolidated these into a single Lucid chart diagram, created in line with global Nutanix standards:</p>
+<div class="image-container">
+<img alt="Example of a Current vs. Future State diagram" src="./images/page9_img1.png"/>
+</div>
+</div>
+<div>
+<h4 class="font-semibold text-md text-gray-800 mb-2">Use Case Example 2: Creating Diagrams from Existing Infrastructure Data</h4>
+<p>New Diagrams Created for Nutanix Customers Using Existing Infrastructure Information from the insights Portal by Using Collector tool. The SE Support Team can leverage the existing install base data from The Portal and create new architectural diagrams. SEs can leverage these new diagrams for upsell/tech refresh opportunity discussions with customers.</p>
+<p class="mt-2 p-3 bg-gray-100 border border-gray-200 rounded-lg text-sm"><strong>Important Note:</strong> SE Support team will replicate the existing infrastructure exactly how it is currently shown in the portal install base, if System engineer wants us to add the new solution proposal into the same diagram then the requirement is the new proposal Sizing solution to be shared with us. Any final diagram shared by the SE Support team must be vetted by the system engineer for accuracy before sharing it with the customer.</p>
+<div class="image-container">
+<img alt="Example diagrams and tables from existing infrastructure data" src="./images/page10_img2.png"/>
+</div>
+</div>
+<div>
+<h4 class="font-semibold text-md text-gray-800 mb-2">Use Case Example 3: Xcceleration Blueprint - Xpress Documentation (for non tech audience)</h4>
+<p>Visualize what's currently running in the customer's infrastructure across different sites. It is often used by SEs to drive strategic discussions with key stakeholders-including non-technical teams and C-level executives. With the use of intuitive icons, the blueprint makes it easier for the audience to quickly grasp the architecture and align on next steps.</p>
+<div class="image-container">
+<img alt="Example Xcceleration Blueprint table" src="./images/page11_img1.png"/>
+</div>
+</div>
+<div>
+<h4 class="font-semibold text-md text-gray-800 mb-2">Use Case Example 4: Whiteboard Photos to Lucid Chart Diagrams</h4>
+<p>Convert Whiteboard Pictures Taken at Customer Site into Lucid Chart Diagrams. Before you leave a customer or prospect meeting, take a picture of the whiteboard. Suppose SEs take a picture of the prospect/customer's existing infrastructure design created on the whiteboard during the customer meeting. In that case, they can share the photo as an attachment when submitting a SE Support Ticket.</p>
+<p class="mt-2 p-3 bg-gray-100 border border-gray-200 rounded-lg text-sm"><strong>Important Note:</strong> Only High Resolution and Clear Pictures to be shared to ensure quick action and avoid delays.</p>
+<div class="image-container">
+<img alt="Whiteboard photo converted to Lucid Chart" src="./images/page12_img1.png"/>
+</div>
+</div>
+<div>
+<h4 class="font-semibold text-md text-gray-800 mb-2">Use Case Example 5: Creating Rack Elevation Diagrams from Sizer / Collector / Portal Data</h4>
+<p>Rack Elevation Diagrams Created for Nutanix Customers Using Infrastructure Data from Sizer, Collector, or Portal. The SE Support Team can take infrastructure details exported from Sizer, Collector, or the Portal and convert them into Rack Elevation Diagrams. The team will use accurate server icons to ensure correct representation. These diagrams can be used in customer discussions and proposals.</p>
+<div class="image-container">
+<img alt="Rack elevation" src="./images/rack_diagram.png"/>
+</div>
+<p class="mt-2 p-3 bg-gray-100 border border-gray-200 rounded-lg text-sm"><strong>Important Note:</strong> SE Support Team will replicate the rack layout exactly as per the data shared from Sizer/Collector/Portal. Any final diagram created must be reviewed and approved by the System Engineer before sharing with the customer.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-sm border border-gray-200">
+<button class="accordion-button w-full text-left p-5 font-semibold text-lg flex justify-between items-center hover:bg-purple-50 transition-colors duration-200">
+                    3) Data Center Info Collection
+                    <svg class="accordion-icon w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+<div class="panel">
+<div class="p-5 border-t border-gray-200 space-y-6">
+<p>Proactively, the SE Support Team, working with SE Management based on Region, will run SFDC reports identifying Prospects and existing Customer Opportunities meeting the following criteria: Stage 1 &amp; 2 Opportunities and ACV value &gt;= USD 50K. In cases where we find existing customer Opportunities, the SE Support Team will work closely with the Account SE to identify the customer contact to collect infrastructure data. For prospects leveraging Nutanix Partners, the SE Support Team will work with the partner to run the Collector tool, fetching and sharing the existing infrastructure data with the Account SEs. This infrastructure data will also feed into the SFDC Account object for future reference.</p>
+<div>
+<h4 class="font-semibold text-md text-gray-800 mb-2">Prospect Data Collection</h4>
+<p>The SE Support Team will take the following steps to work with partners to gather the necessary prospect data:</p>
+<ol class="list-decimal list-inside mt-2 pl-4 space-y-1">
+<li>Identify Target Opportunities (List approved by SE Management).</li>
+<li>Reach out to the Nutanix partners to help with the Prospect datacenter info collection by utilizing the Collector Tool.</li>
+<li>Share the collected data with system engineers using the SE Support ticketing system for communication and save it in SFDC for future reference.</li>
+</ol>
+</div>
+<div>
+<h4 class="font-semibold text-md text-gray-800 mb-2">Using Nutanix Collector: How it Works</h4>
+<p class="mb-4">Nutanix Collector gathers cluster statistics, including usage data of allocated resources from AHV, ESXi, Hyper-V, Windows-based MS SQL Servers, and NetApp ONTAP CIFS shares. The latest version also supports for gathering both configuration and utilization data from native Azure and AWS environments. The tool gathers data from different types of environments. Supported on-prem are - Prism, vCenter, Hyper-V, etc. It has expanded support to public cloud collection with AWS and Azure, limited to Windows CLI variants because the CLI tools provided by cloud providers are the most efficient way to interact with their APIs for such complex environments. Nutanix Collector operates in a non-invasive manner using read-only permissions through APIs and PowerShell scripts. The data amassed by the Nutanix Collector can subsequently be exported to Nutanix Sizer for precise planning and recommendations.</p>
+<div class="space-y-4">
+<div>
+<p><strong>1. Download the supported desktop variant of the collector application using this Nutanix Portal Link.</strong> (This portal link works for Prospects with no Portal access) The Mac variant sometimes may ask for additional permissions to enable the app. Go to System Settings &gt; Privacy &amp; Security &gt; Under Security "Allow applications downloaded From."</p>
+<div class="mt-2">
+<div class="image-container max-w-xl mx-auto">
+<img alt="Collector Mac Icon" src="./images/page13_img2.png"/>
+</div>
+</div>
+</div>
+<div>
+<p><strong>2. Run the installed Collector Icon.</strong> Click here for the <a href="https://drive.google.com/file/d/1DDfs1hivT9xRsk9KevUgf4vN9307nH4i/view" target="_blank" class="text-indigo-600 hover:underline">Demo Video</a>.</p>
+<div class="image-container w-48 mx-auto">
+<img alt="Collector Icon" src="./images/page13_img3.png"/>
+</div>
+</div>
+<div>
+<p><strong>3. Click on Connect to see the complete datacenter information.</strong> Note, this may take time. (i.e. based on the datacenter size)</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+<div class="image-container max-w-xs mx-auto">
+<img alt="Collector connection options" src="./images/page14_img3.png"/>
+</div>
+<div class="image-container">
+<img alt="Collector connecting to a vCenter server" src="./images/page15_img1.png"/>
+</div>
+</div>
+</div>
+<div>
+<p><strong>4. Select your datacenters/clusters and click Collect.</strong> You can then save the output in "XLS format" (which has an option to mask sensitive information) or as a "Zip file" which is compatible with the Sizer tool.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+<div class="image-container">
+<img alt="Collector summary view screen" src="./images/page16_img4.png"/>
+</div>
+<div class="image-container">
+<img alt="Collector data selection screen" src="./images/page16_img1.png"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const accordions = document.getElementsByClassName("accordion-button");
+    for (let i = 0; i < accordions.length; i++) {
+        accordions[i].addEventListener("click", function() {
+            this.classList.toggle("active-acc");
+            const panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    }
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll(".image-container img").forEach(img => {
+    img.style.cursor = "zoom-in";
+    img.addEventListener("click", function() {
+      const overlay = document.createElement("div");
+      overlay.classList.add("image-overlay");
+
+      const zoomImg = document.createElement("img");
+      zoomImg.src = this.src;
+
+      overlay.appendChild(zoomImg);
+      document.body.appendChild(overlay);
+
+      let scale = 1;
+      let isDragging = false;
+      let startX, startY, translateX = 0, translateY = 0;
+
+      overlay.addEventListener("wheel", function(e) {
+        e.preventDefault();
+        const rect = zoomImg.getBoundingClientRect();
+        const offsetX = e.clientX - rect.left;
+        const offsetY = e.clientY - rect.top;
+
+        const prevScale = scale;
+        if (e.deltaY < 0) {
+          scale *= 1.1;
+        } else {
+          scale /= 1.1;
+        }
+        const scaleFactor = scale / prevScale;
+
+        translateX -= (offsetX - translateX) * (scaleFactor - 1);
+        translateY -= (offsetY - translateY) * (scaleFactor - 1);
+
+        zoomImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+      });
+
+      zoomImg.addEventListener("mousedown", function(e) {
+        isDragging = true;
+        startX = e.clientX - translateX;
+        startY = e.clientY - translateY;
+        zoomImg.style.cursor = "grabbing";
+      });
+
+      document.addEventListener("mousemove", function(e) {
+        if (!isDragging) return;
+        translateX = e.clientX - startX;
+        translateY = e.clientY - startY;
+        zoomImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+      });
+
+      document.addEventListener("mouseup", function() {
+        if (isDragging) {
+          isDragging = false;
+          zoomImg.style.cursor = "grab";
+        }
+      });
+
+      overlay.addEventListener("click", function(e) {
+        if (e.target === overlay) {
+          overlay.remove();
+        }
+      });
+
+      document.addEventListener("keydown", function escHandler(e) {
+        if (e.key === "Escape") {
+          overlay.remove();
+          document.removeEventListener("keydown", escHandler);
+        }
+      });
+    });
+  });
+});
+</script></body>
+</html>
